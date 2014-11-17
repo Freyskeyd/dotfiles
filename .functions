@@ -1,0 +1,5 @@
+
+# mkdir and CD
+function mkcd() {
+  mkdir -p "$@" && cd "$@"
+}
