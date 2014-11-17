@@ -1,6 +1,6 @@
 [alias]
   co = checkout
-  co = commit
+  ci = commit
   st = status
   br = branch
   type = cat-file -t
