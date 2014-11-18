@@ -23,3 +23,6 @@ alias gogo='vagrant ssh'
 # PHP
 alias artisan='php artisan'
 
+# Projects
+alias fd='cd $HOME/work/fd/env'
+alias fdm='cd $HOME/Sites/fd-mobile'
