@@ -31,7 +31,7 @@
   email = simon@acid.fr
 
 [core]
-  editor = /usr/local/bin/nvim
+	editor = vim
 
 [rerere]
   enabled = true

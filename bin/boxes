@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+import os
+import sys
+import json
+from os.path import expanduser
+
+from subprocess import call
+
+if len(sys.argv) < 3:
+    print('You must provider at least one vm and a command')
+    sys.exit()
+
+name, command, *vm = sys.argv
+
+with open(expanduser("~")+"/.boxes", "r") as f:
+    cfg = json.loads(f.read())
+
+
+class cd(object):
+    def __init__(self, new_dir):
+        self.new_dir = new_dir
+        self.old_dir = None
+
+    def __enter__(self):
+        self.old_dir = os.getcwd()
+        os.chdir(self.new_dir)
+
+    def __exit__(self, *args):
+        os.chdir(self.old_dir)
+
+for folder in vm:
+    if not folder.count("/"):
+        folder = cfg["default_path"]+folder
+
+    with cd(folder):
+        call(['vagrant', command])
