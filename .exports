@@ -4,12 +4,16 @@ export RBENV_ROOT="$HOME/.rbenv"
 if [ -d $RBENV_ROOT ]; then
   export PATH="$RBENV_ROOT/bin:$PATH"
   eval "$(rbenv init -)"
+  echo bundler >> ~/.rbenv/default-gems
+  echo rubygems-bundler >> ~/.rbenv/default-gemsexport PATH=/usr/local/sbin:$PATH
 fi
+
 export PATH=/usr/local/sbin:$PATH
-echo bundler >> ~/.rbenv/default-gems
-echo rubygems-bundler >> ~/.rbenv/default-gemsexport PATH=/usr/local/sbin:$PATH
-# Add dart
-export PATH=$PATH:/usr/local/Cellar/dart/1.8.3/bin
-export PATH=$HOME/.composer/vendor/bin:$PATH
+
+if [ -d "$HOME:/.composer" ]; then
+  export PATH=$HOME/.composer/vendor/bin:$PATH
+fi
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.dotfiles/bin:$PATH
+
+export EDITOR='vim'
