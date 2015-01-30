@@ -10,7 +10,9 @@ if len(sys.argv) < 3:
     print('You must provider at least one vm and a command')
     sys.exit()
 
-name, command, *vm = sys.argv
+name = sys.argv[0]
+command = sys.argv[1]
+vm = sys.argv[2:]
 
 with open(expanduser("~")+"/.boxes", "r") as f:
     cfg = json.loads(f.read())
