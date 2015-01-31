@@ -13,7 +13,7 @@ export PATH=/usr/local/sbin:$PATH
 if [ -d "$HOME/.composer" ]; then
   export PATH=$HOME/.composer/vendor/bin:$PATH
 fi
-export PATH=$HOME/bin:$PATH
+# export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.dotfiles/bin:$PATH
 
 export EDITOR='vim'
