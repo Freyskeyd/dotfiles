@@ -26,3 +26,16 @@ alias artisan='php artisan'
 # Projects
 alias fd='cd $HOME/work/fd/env'
 alias fdm='cd $HOME/Sites/fd-mobile'
+
+# boot2docker
+alias b2d='boot2docker'
+
+# Docker
+alias devenv="docker start -ia devenv"
+alias create-devenv="docker run -it \
+  --name devenv \
+  -v /Users/Simon/.ssh:/home/developer/.ssh \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v $(which docker):$(which docker) \
+  -v /workspace:/workspace \
+  freyskeyd/developer"
