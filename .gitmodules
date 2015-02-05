@@ -1,3 +1,6 @@
 [submodule "maximum-awesome-nvim"]
         path = maximum-awesome-nvim
         url = git@github.com:Freyskeyd/maximum-awesome-nvim.git
+[submodule "maximum-awesome"]
+	path = maximum-awesome
+	url = https://github.com/Freyskeyd/maximum-awesome.git
