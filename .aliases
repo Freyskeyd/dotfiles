@@ -34,7 +34,7 @@ alias b2d='boot2docker'
 alias devenv="docker start -ia devenv"
 alias create-devenv="docker run -it \
   --name devenv \
-  -v /Users/Simon/.ssh:/home/developer/.ssh \
+  -v $HOME/.ssh:/home/developer/.ssh \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v $(which docker):$(which docker) \
   -v /workspace:/workspace \
