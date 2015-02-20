@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="avit"
+ZSH_THEME="ys"
 export TERM=xterm-256color
 DISABLE_AUTO_TITLE="true"
 plugins=(git virtualenvwrapper docker git-flow taskwarrior)
