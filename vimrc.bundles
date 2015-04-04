@@ -1,0 +1,116 @@
+" Modeline and Notes {
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
+" }
+
+" Environment {
+    set nocompatible
+    set background=dark
+    filetype off
+    set rtp+=$HOME/.vim/bundle/vundle
+    call vundle#rc()
+
+    " UnBundle command {
+    function! UnBundle(arg, ...)
+        let bundle = vundle#config#init_bundle(a:arg, a:000)
+        call filter(g:vundle#bundles, 'v:val["name_spec"] != "' . a:arg .'"')
+    endfunction
+
+    com! -nargs=+ UnBundle
+                \ call UnBundle(<args>)
+    " }
+"}
+
+" Bundles {
+"
+"   Needed {
+        Bundle 'gmarik/vundle'
+        Bundle 'MarcWeber/vim-addon-mw-utils'
+        Bundle 'tomtom/tlib_vim'
+        if executable('ag')
+            Bundle 'mileszs/ack.vim'
+            let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
+        endif
+"   }
+"
+"   General {
+        Bundle 'scrooloose/nerdtree' " Tree explorer
+        Bundle 'altercation/vim-colors-solarized' " Color
+        Bundle 'tpope/vim-surround'
+        Bundle 'tpope/vim-repeat'
+        Bundle 'spf13/vim-autoclose'
+        Bundle 'ctrlpvim/ctrlp.vim'
+        Bundle 'tacahiroy/ctrlp-funky'
+        Bundle 'kristijanhusak/vim-multiple-cursors'
+        Bundle 'vim-scripts/sessionman.vim' " create session for vim"
+        Bundle 'matchit.zip' " Extend % match
+        Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
+        Bundle 'Lokaltog/vim-easymotion'
+        Bundle 'jistr/vim-nerdtree-tabs' " nerdtree tabs
+        Bundle 'flazz/vim-colorschemes' " colorschemes
+        Bundle 'mbbill/undotree' " list all UNDO
+        Bundle 'Yggdroot/indentLine'
+        Bundle 'vim-scripts/restore_view.vim' " restore file cursor position
+        Bundle 'mhinz/vim-signify' " display add/remove info
+        Bundle 'tpope/vim-abolish.git' " easy search, substitute
+        Bundle 'osyo-manga/vim-over' " substitue preview
+        Bundle 'kana/vim-textobj-user' " create your own text objects
+        Bundle 'kana/vim-textobj-indent' " indent textobj
+        Bundle 'gcmt/wildfire.vim' " smart selection of text object
+"   }
+"
+"   Development {
+        Bundle 'scrooloose/syntastic'
+        Bundle 'tpope/vim-fugitive'
+        Bundle 'mattn/webapi-vim' " Call webapi directly in vim
+        Bundle 'mattn/gist-vim' " github gist
+        Bundle 'scrooloose/nerdcommenter' " Extra commentor
+        Bundle 'tpope/vim-commentary' " easy commentary
+        Bundle 'godlygeek/tabular' " Text filtering + tabulation
+        Bundle 'majutsushi/tagbar' " Class outline
+"   }
+"
+"   AutoComplete {
+        Bundle 'Valloric/YouCompleteMe'
+        Bundle 'SirVer/ultisnips'
+        Bundle 'honza/vim-snippets'
+"   }
+"
+"   PHP {
+        Bundle 'spf13/PIV'
+        Bundle 'arnaud-lb/vim-php-namespace'
+        Bundle 'beyondwords/vim-twig'
+"   }
+"
+"   Python {
+        Bundle 'klen/python-mode'
+        Bundle 'yssource/python.vim'
+        Bundle 'python_match.vim'
+        Bundle 'pythoncomplete'
+"   }
+"
+"   Javascript {
+        Bundle 'elzr/vim-json'
+        Bundle 'groenewege/vim-less'
+        Bundle 'pangloss/vim-javascript'
+        Bundle 'briancollins/vim-jst'
+        Bundle 'kchmck/vim-coffee-script'
+"   }
+"
+"   HTML {
+        Bundle 'amirh/HTML-AutoCloseTag'
+        Bundle 'hail2u/vim-css3-syntax'
+        Bundle 'gorodinskiy/vim-coloresque'
+        Bundle 'tpope/vim-haml'
+"   }
+"
+"   Ruby {
+        Bundle 'tpope/vim-rails'
+        let g:rubycomplete_buffer_loading = 1
+        "let g:rubycomplete_classes_in_global = 1
+        "let g:rubycomplete_rails = 1
+"   }
+" }
+
+if filereadable(expand("~/.vimrc.bundles.local"))
+    source ~/.vimrc.bundles.local
+endif
