@@ -142,7 +142,7 @@ setup_vundle() {
     export SHELL='/bin/sh'
 
     vim \
-        -u "$app_dir/.vimrc.bundles" \
+        -u "$app_dir/vimrc.bundles" \
         "+set nomore" \
         "+BundleInstall!" \
         "+BundleClean" \

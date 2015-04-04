@@ -33,7 +33,8 @@
 "   }
 "
 "   General {
-        Bundle 'scrooloose/nerdtree' " Tree explorer
+        " Tree explorer
+        Bundle 'scrooloose/nerdtree'
         Bundle 'altercation/vim-colors-solarized' " Color
         Bundle 'tpope/vim-surround'
         Bundle 'tpope/vim-repeat'
