@@ -172,4 +172,5 @@ clone_repo "Successfully cloned $app_name"
 create_symlinks "Setting up vim symlinks"
 clone_vundle "Successfully cloned vundle"
 setup_vundle "Now updating/installing plugins using vundle"
+
 msg "\nThanks for installing $app_name."
