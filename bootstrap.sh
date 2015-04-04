@@ -4,6 +4,8 @@
 app_name='dotfiles'
 app_dir="$HOME/.$app_name"
 git_uri='https://github.com/Freyskeyd/dotfiles.git'
+ohmy_dir="$HOME/.oh-my-zsh"
+ohmyzsh='https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh'
 git_branch='master'
 debug_mode='1'
 [ -z "$VUNDLE_URI" ] && VUNDLE_URI="https://github.com/gmarik/vundle.git"
@@ -85,6 +87,15 @@ upgrade_repo() {
       debug
 }
 
+install_oh_my_zsh() {
+    if [ ! -e "$ohmy_dir" ]; then
+        curl -L $1 | sh
+        ret="$?"
+        success "$2"
+        debug
+    fi
+}
+
 clone_repo() {
 
     if [ ! -e "$app_dir" ]; then
@@ -149,6 +160,9 @@ variable_set "$HOME"
 msg "Checking packages"
 program_exists "vim" "To install $app_name you need to install Vim."
 program_exists "git" "To install $app_name you need to install GIT."
+program_exists "curl" "To install $app_name you need to install curl."
+
+install_oh_my_zsh $ohmyzsh "Successfully install Oh My Zsh."
 
 do_backup "Your old configuration will now have a suffix `date +%Y%m%d%S`" \
     "$HOME/.vim" \
