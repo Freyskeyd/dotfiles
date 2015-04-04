@@ -35,39 +35,58 @@
 "   General {
         " Tree explorer
         Bundle 'scrooloose/nerdtree'
-        Bundle 'altercation/vim-colors-solarized' " Color
+        " Color
+        Bundle 'altercation/vim-colors-solarized' 
         Bundle 'tpope/vim-surround'
         Bundle 'tpope/vim-repeat'
         Bundle 'spf13/vim-autoclose'
         Bundle 'ctrlpvim/ctrlp.vim'
         Bundle 'tacahiroy/ctrlp-funky'
         Bundle 'kristijanhusak/vim-multiple-cursors'
-        Bundle 'vim-scripts/sessionman.vim' " create session for vim"
-        Bundle 'matchit.zip' " Extend % match
+        " create session for vim"
+        Bundle 'vim-scripts/sessionman.vim' 
+        " Extend % match
+        Bundle 'matchit.zip' 
         Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
         Bundle 'Lokaltog/vim-easymotion'
-        Bundle 'jistr/vim-nerdtree-tabs' " nerdtree tabs
-        Bundle 'flazz/vim-colorschemes' " colorschemes
-        Bundle 'mbbill/undotree' " list all UNDO
+        " nerdtree tabs
+        Bundle 'jistr/vim-nerdtree-tabs' 
+        " colorschemes
+        Bundle 'flazz/vim-colorschemes' 
+        " list all UNDO
+        Bundle 'mbbill/undotree' 
         Bundle 'Yggdroot/indentLine'
-        Bundle 'vim-scripts/restore_view.vim' " restore file cursor position
-        Bundle 'mhinz/vim-signify' " display add/remove info
-        Bundle 'tpope/vim-abolish.git' " easy search, substitute
-        Bundle 'osyo-manga/vim-over' " substitue preview
-        Bundle 'kana/vim-textobj-user' " create your own text objects
-        Bundle 'kana/vim-textobj-indent' " indent textobj
-        Bundle 'gcmt/wildfire.vim' " smart selection of text object
+        " restore file cursor position
+        Bundle 'vim-scripts/restore_view.vim' 
+        " display add/remove info
+        Bundle 'mhinz/vim-signify' 
+        " easy search, substitute
+        Bundle 'tpope/vim-abolish.git' 
+        " substitue preview
+        Bundle 'osyo-manga/vim-over' 
+        " create your own text objects
+        Bundle 'kana/vim-textobj-user' 
+        " indent textobj
+        Bundle 'kana/vim-textobj-indent' 
+        " smart selection of text object
+        Bundle 'gcmt/wildfire.vim' 
 "   }
 "
 "   Development {
         Bundle 'scrooloose/syntastic'
         Bundle 'tpope/vim-fugitive'
-        Bundle 'mattn/webapi-vim' " Call webapi directly in vim
-        Bundle 'mattn/gist-vim' " github gist
-        Bundle 'scrooloose/nerdcommenter' " Extra commentor
-        Bundle 'tpope/vim-commentary' " easy commentary
-        Bundle 'godlygeek/tabular' " Text filtering + tabulation
-        Bundle 'majutsushi/tagbar' " Class outline
+        " Call webapi directly in vim
+        Bundle 'mattn/webapi-vim' 
+        " github gist
+        Bundle 'mattn/gist-vim' 
+        " Extra commentor
+        Bundle 'scrooloose/nerdcommenter' 
+        " easy commentary
+        Bundle 'tpope/vim-commentary' 
+        " Text filtering + tabulation
+        Bundle 'godlygeek/tabular' 
+        " Class outline
+        Bundle 'majutsushi/tagbar' 
 "   }
 "
 "   AutoComplete {
