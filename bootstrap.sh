@@ -129,6 +129,7 @@ create_symlinks() {
     lnif "$endpath/vimrc" "$HOME/.vimrc"
     lnif "$endpath/vimrc.bundles" "$HOME/.vimrc.bundles"
     lnif "$endpath/vim" "$HOME/.vim"
+    lnif "$endpath/zshrc" "$HOME/.zshrc"
 
     touch "$HOME/.vimrc.local"
 
@@ -168,8 +169,12 @@ do_backup "Your old configuration will now have a suffix `date +%Y%m%d%S`" \
     "$HOME/.vim" \
     "$HOME/.vimrc"
 
+do_backup "Your old configuration will now have a suffix `date +%Y%m%d%S`" \
+    "$HOME/.zshrc"
+
+
 clone_repo "Successfully cloned $app_name"
-create_symlinks "Setting up vim symlinks"
+create_symlinks "Setting up vim and ohmyzsh symlinks"
 clone_vundle "Successfully cloned vundle"
 setup_vundle "Now updating/installing plugins using vundle"
 
