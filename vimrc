@@ -6,10 +6,14 @@
 
     " Basics {
         set nocompatible        " Must be first line
-	set shell=/bin/sh
+        set shell=/bin/sh
     " }
 " }
-
+" Import config {
+    if filereadable(expand("~/.vimrc.config"))
+        source ~/.vimrc.config
+    endif  
+" }
 " Use bundles config {
     if filereadable(expand("~/.vimrc.bundles"))
         source ~/.vimrc.bundles
@@ -19,9 +23,6 @@
 " General {
 
     set background=dark         " Assume a dark background
-    " if !has('gui')
-        "set term=$TERM          " Make arrow and other keys work
-    " endif
     filetype plugin indent on   " Automatically detect file types.
     syntax on                   " Syntax highlighting
     set mouse=a                 " Automatically enable mouse usage
@@ -50,11 +51,8 @@
     " set it to the first line when editing a git commit message
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
-    " http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session
-    " Restore cursor to file position in previous editing session
-    " To disable this, add the following to your .vimrc.before.local file:
-    "   let g:spf13_no_restore_cursor = 1
-    if !exists('g:spf13_no_restore_cursor')
+    
+    if !exists('g:cfg_no_restore_cursor')
         function! ResCur()
             if line("'\"") <= line("$")
                 normal! g`"
@@ -76,9 +74,8 @@
             set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
         endif
 
-        " To disable views add the following to your .vimrc.before.local file:
-        "   let g:spf13_no_views = 1
-        if !exists('g:spf13_no_views')
+        
+        if !exists('g:cfg_no_views')
             " Add exclusions to mkview and loadview
             " eg: *.*, svn-commit.tmp
             let g:skipview_files = [
@@ -91,7 +88,7 @@
 
 " Vim UI {
 
-    if !exists('g:override_spf13_bundles') && filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
+    if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
         let g:solarized_termcolors=256
         let g:solarized_termtrans=1
         let g:solarized_contrast="normal"
@@ -163,10 +160,6 @@
     "set matchpairs+=<:>             " Match, to be used with %
     set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
     "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
-    " Remove trailing whitespaces and ^M chars
-    " To disable the stripping of whitespace, add the following to your
-    " .vimrc.before.local file:
-    "   let g:spf13_keep_trailing_whitespace = 1
     autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
@@ -184,32 +177,20 @@
 
 " Key (re)Mappings {
 
-    " The default leader is '\', but many people prefer ',' as it's in a standard
-    " location. To override this behavior and set it back to '\' (or any other
-    " character) add the following to your .vimrc.before.local file:
-    "   let g:spf13_leader='\'
-    if !exists('g:spf13_leader')
+    if !exists('g:cfg_leader')
         let mapleader = ','
     else
         let mapleader=g:spf13_leader
     endif
-    if !exists('g:spf13_localleader')
-        let maplocalleader = '_'
-    else
-        let maplocalleader=g:spf13_localleader
-    endif
+
+    let maplocalleader = '_'
 
     " Easier moving in tabs and windows
     " The lines conflict with the default digraph mapping of <C-K>
-    " If you prefer that functionality, add the following to your
-    " .vimrc.before.local file:
-    "   let g:spf13_no_easyWindows = 1
-    if !exists('g:spf13_no_easyWindows')
         map <C-J> <C-W>j<C-W>_
         map <C-K> <C-W>k<C-W>_
         map <C-L> <C-W>l<C-W>_
         map <C-H> <C-W>h<C-W>_
-    endif
 
     " Wrapped lines goes down/up to next row, rather than next line in file.
     noremap j gj
@@ -218,10 +199,6 @@
     " End/Start of line motion keys act relative to row/wrap width in the
     " presence of `:set wrap`, and relative to line for `:set nowrap`.
     " Default vim behaviour is to act relative to text line in both cases
-    " If you prefer the default behaviour, add the following to your
-    " .vimrc.before.local file:
-    "   let g:spf13_no_wrapRelMotion = 1
-    if !exists('g:spf13_no_wrapRelMotion')
         " Same for 0, home, end, etc
         function! WrapRelativeMotion(key, ...)
             let vis_sel=""
@@ -252,20 +229,13 @@
         vnoremap 0 :<C-U>call WrapRelativeMotion("0", 1)<CR>
         vnoremap <Home> :<C-U>call WrapRelativeMotion("0", 1)<CR>
         vnoremap ^ :<C-U>call WrapRelativeMotion("^", 1)<CR>
-    endif
 
     " The following two lines conflict with moving to top and
     " bottom of the screen
-    " If you prefer that functionality, add the following to your
-    " .vimrc.before.local file:
-    "   let g:spf13_no_fastTabs = 1
-    if !exists('g:spf13_no_fastTabs')
         map <S-H> gT
         map <S-L> gt
-    endif
 
     " Stupid shift key fixes
-    if !exists('g:spf13_no_keyfixes')
         if has("user_commands")
             command! -bang -nargs=* -complete=file E e<bang> <args>
             command! -bang -nargs=* -complete=file W w<bang> <args>
@@ -279,7 +249,6 @@
         endif
 
         cmap Tabe tabe
-    endif
 
     " Yank from the cursor to the end of the line, to be consistent with C and D.
     nnoremap Y y$
@@ -298,9 +267,9 @@
 
     " Most prefer to toggle search highlighting rather than clear the current
     " search results. To clear search highlighting rather than toggle it on
-    " and off, add the following to your .vimrc.before.local file:
-    "   let g:spf13_clear_search_highlight = 1
-    if exists('g:spf13_clear_search_highlight')
+    " and off, add the following to your .vimrc.config file:
+    "   let g:cfg_clear_search_highlight = 1
+    if exists('g:cfg_clear_search_highlight')
         nmap <silent> <leader>/ :nohlsearch<CR>
     else
         nmap <silent> <leader>/ :set invhlsearch<CR>
