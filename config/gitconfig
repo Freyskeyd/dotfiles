@@ -1,0 +1,40 @@
+alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  type = cat-file -t
+  dump = cat-file -p
+  oops = commit --amend --no-edit
+  lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
+
+[apply]
+  whitespace = fix
+
+[color]
+  ui = auto
+
+[diff]
+  renames = copies
+
+[help]
+  autocorrect = 1
+
+[merge]
+  log = true
+
+[push]
+  default=simple
+
+[user]
+  name = Freyskeyd
+  email = contact@freyskeyd.fr
+
+[core]
+    editor = vim
+
+[rerere]
+  enabled = true
+
+[status]
+  showUntrackedFiles = all
