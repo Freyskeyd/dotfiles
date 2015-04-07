@@ -90,7 +90,7 @@ upgrade_repo() {
 install_oh_my_zsh() {
     if [ ! -e "$ohmy_dir" ]; then
         curl -L $1 | sh
-        ret="$?"
+        ret="1"
         success "$2"
         debug
     fi
