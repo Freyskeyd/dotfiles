@@ -92,7 +92,7 @@ install_oh_my_zsh() {
         git clone -q git://github.com/robbyrussell/oh-my-zsh.git $ohmy_dir
         chsh -s /bin/zsh
         ret="1"
-        success "$2"
+        success "$1"
         debug
     fi
 }
@@ -177,7 +177,6 @@ variable_set "$HOME"
 # Setup ZSH
   install_oh_my_zsh $ohmyzsh "Successfully install Oh My Zsh."
 
-  msg "setup oh my end"
 # Setup dotfiles
   clone_repo      "Successfully cloned $app_name"
   create_symlinks "Setting up vim and ohmyzsh symlinks"
