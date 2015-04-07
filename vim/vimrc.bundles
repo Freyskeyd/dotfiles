@@ -81,28 +81,28 @@
         Bundle 'mattn/webapi-vim'
         " github gist
         Bundle 'mattn/gist-vim'
-"         " Extra commentor
-"         Bundle 'scrooloose/nerdcommenter'
-"         " easy commentary
-"         Bundle 'tpope/vim-commentary'
-"         " Text filtering + tabulation
-"         Bundle 'godlygeek/tabular'
-"         " Class outline
-"         Bundle 'majutsushi/tagbar'
-" "   }
-" "
-" "   AutoComplete {
-"         Bundle 'Valloric/YouCompleteMe'
-"         Bundle 'SirVer/ultisnips'
-"         Bundle 'honza/vim-snippets'
-" "   }
-" "
-" "   PHP {
-"         Bundle 'spf13/PIV'
-"         Bundle 'arnaud-lb/vim-php-namespace'
-"         Bundle 'beyondwords/vim-twig'
-" "   }
-" "
+        " Extra commentor
+        Bundle 'scrooloose/nerdcommenter'
+        " easy commentary
+        Bundle 'tpope/vim-commentary'
+        " Text filtering + tabulation
+        Bundle 'godlygeek/tabular'
+        " Class outline
+        Bundle 'majutsushi/tagbar'
+"   }
+"
+"   AutoComplete {
+        Bundle 'Valloric/YouCompleteMe'
+        Bundle 'SirVer/ultisnips'
+        Bundle 'honza/vim-snippets'
+"   }
+"
+"   PHP {
+        Bundle 'spf13/PIV'
+        Bundle 'arnaud-lb/vim-php-namespace'
+        Bundle 'beyondwords/vim-twig'
+"   }
+"
 " "   Python {
 "         Bundle 'klen/python-mode'
 "         Bundle 'yssource/python.vim'
