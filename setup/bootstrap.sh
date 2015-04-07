@@ -126,10 +126,10 @@ create_symlinks() {
         mkdir -p "$endpath/.vim/bundle"
     fi
 
-    lnif "$endpath/vimrc" "$HOME/.vimrc"
-    lnif "$endpath/vimrc.bundles" "$HOME/.vimrc.bundles"
-    lnif "$endpath/vim" "$HOME/.vim"
-    lnif "$endpath/zshrc" "$HOME/.zshrc"
+    lnif "$endpath/vim/vimrc" "$HOME/.vimrc"
+    lnif "$endpath/vim/vimrc.bundles" "$HOME/.vimrc.bundles"
+    lnif "$endpath/vim/vim" "$HOME/.vim"
+    lnif "$endpath/zsh/zshrc" "$HOME/.zshrc"
 
     touch "$HOME/.vimrc.local"
 
@@ -143,7 +143,7 @@ setup_vundle() {
     export SHELL='/bin/sh'
 
     vim \
-        -u "$app_dir/vimrc.bundles" \
+        -u "$app_dir/vim/vimrc.bundles" \
         "+set nomore" \
         "+BundleInstall!" \
         "+BundleClean" \
@@ -158,24 +158,30 @@ setup_vundle() {
 ###### Main Starter
 
 variable_set "$HOME"
-msg "Checking packages"
-program_exists "vim" "To install $app_name you need to install Vim."
-program_exists "git" "To install $app_name you need to install GIT."
-program_exists "curl" "To install $app_name you need to install curl."
 
-install_oh_my_zsh $ohmyzsh "Successfully install Oh My Zsh."
+# Checking packages
+  msg "Checking packages"
+  program_exists "vim"  "To install $app_name you need to install Vim."
+  program_exists "git"  "To install $app_name you need to install GIT."
+  program_exists "curl" "To install $app_name you need to install curl."
 
-do_backup "Your old configuration will now have a suffix `date +%Y%m%d%S`" \
-    "$HOME/.vim" \
-    "$HOME/.vimrc"
+# Backuping
+  do_backup "Your old configuration will now have a suffix `date +%Y%m%d%S`" \
+      "$HOME/.zshrc"
 
-do_backup "Your old configuration will now have a suffix `date +%Y%m%d%S`" \
-    "$HOME/.zshrc"
+  do_backup "Your old configuration will now have a suffix `date +%Y%m%d%S`" \
+      "$HOME/.vim" \
+      "$HOME/.vimrc"
 
+# Setup ZSH
+  install_oh_my_zsh $ohmyzsh "Successfully install Oh My Zsh."
 
-clone_repo "Successfully cloned $app_name"
-create_symlinks "Setting up vim and ohmyzsh symlinks"
-clone_vundle "Successfully cloned vundle"
-setup_vundle "Now updating/installing plugins using vundle"
+# Setup dotfiles
+  clone_repo      "Successfully cloned $app_name"
+  create_symlinks "Setting up vim and ohmyzsh symlinks"
+  clone_vundle    "Successfully cloned vundle"
+  setup_vundle    "Now updating/installing plugins using vundle"
 
+# Setup Tmux
+# Compile YCM if not compiled yet
 msg "\nThanks for installing $app_name."
