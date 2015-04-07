@@ -59,7 +59,7 @@
         Bundle 'mbbill/undotree'
         Bundle 'Yggdroot/indentLine'
         " restore file cursor position
-        " Bundle 'vim-scripts/restore_view.vim'
+        Bundle 'vim-scripts/restore_view.vim'
         " display add/remove info
         " Bundle 'mhinz/vim-signify'
         " easy search, substitute
