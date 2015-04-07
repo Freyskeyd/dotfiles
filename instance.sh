@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Source aliases
-source ./config/aliases
+source $HOME/.dotfiles/config/aliases
 # Source exports
-source ./config/exports
+source $HOME/.dotfiles/config/exports
 # Source functions
-source ./config/functions
+source $HOME/.dotfiles/config/functions
