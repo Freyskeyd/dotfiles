@@ -12,7 +12,7 @@
 " Import config {
     if filereadable(expand("~/.vimrc.config"))
         source ~/.vimrc.config
-    endif  
+    endif
 " }
 " Use bundles config {
     if filereadable(expand("~/.vimrc.bundles"))
@@ -27,6 +27,9 @@
     syntax on                   " Syntax highlighting
     set mouse=a                 " Automatically enable mouse usage
     set mousehide               " Hide the mouse cursor while typing
+    if exists('$TMUX')
+        set ttymouse=xterm2
+    endif
     scriptencoding utf-8
 
     if has('clipboard')
@@ -51,7 +54,6 @@
     " set it to the first line when editing a git commit message
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
-    
     if !exists('g:cfg_no_restore_cursor')
         function! ResCur()
             if line("'\"") <= line("$")
@@ -74,7 +76,7 @@
             set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
         endif
 
-        
+
         if !exists('g:cfg_no_views')
             " Add exclusions to mkview and loadview
             " eg: *.*, svn-commit.tmp
@@ -173,6 +175,7 @@
     " Workaround broken colour highlighting in Haskell
     autocmd FileType haskell,rust setlocal nospell
 
+    let &colorcolumn="80,120,200"
 " }
 
 " Key (re)Mappings {
@@ -184,6 +187,16 @@
     endif
 
     let maplocalleader = '_'
+
+    " keyboard shortcuts
+    inoremap jj <ESC>
+    " Delete on char without yank
+    nnoremap x "_x
+    vnoremap x "_xgv
+    nnoremap X "_dd
+    vnoremap X "_X
+    nnoremap <BS> "_X"
+    nnoremap <Del> "_x"
 
     " Easier moving in tabs and windows
     " The lines conflict with the default digraph mapping of <C-K>
@@ -321,6 +334,9 @@
     " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
     map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
+    let g:indentLine_color_term = 31
+    " nnoremap <leader>] :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+    " noremap <leader>i :s/^/\
 " }
 
 " Plugins {
@@ -379,6 +395,10 @@
         if gitroot != ''
             let &tags = &tags . ',' . gitroot . '/.git/tags'
         endif
+    " }
+
+    " Ag {
+        nnormap <leader>a :Ag<space>
     " }
 
     " AutoCloseTag {
@@ -462,12 +482,19 @@
     " ctrlp {
         if isdirectory(expand("~/.vim/bundle/ctrlp.vim/"))
             let g:ctrlp_working_path_mode = 'ra'
-            nnoremap <silent> <D-t> :CtrlP<CR>
-            nnoremap <silent> <D-r> :CtrlPMRU<CR>
+            nnoremap <silent> <leader>t :CtrlP<CR>
+            nnoremap <silent> <leader>r :CtrlPMRU<CR>
+            " List all ctag matches for the word under the cursor
+            map <leader>J :CtrlPTag<CR><C-\>w
+
+            
+
             let g:ctrlp_custom_ignore = {
                 \ 'dir':  '\.git$\|\.hg$\|\.svn$',
                 \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
-
+            " Use ag in CtrlP for listing files. Lightning fast and respects
+            " .gitignore
+            " set grepprg=ag\ --nogroup\ --nocolor
             " On Windows use "dir" as fallback command.
             if executable('ag')
                 let s:ctrlp_fallback = 'ag %s --nocolor -l -g ""'
@@ -491,7 +518,7 @@
                 let g:ctrlp_extensions = ['funky']
 
                 "funky
-                nnoremap <Leader>fu :CtrlPFunky<Cr>
+                nnoremap <leader>fu :CtrlPFunky<Cr>
             endif
         endif
     "}

@@ -27,7 +27,7 @@
         Bundle 'MarcWeber/vim-addon-mw-utils'
         Bundle 'tomtom/tlib_vim'
         if executable('ag')
-            Bundle 'mileszs/ack.vim'
+            Bundle 'rking/ag.vim'
             let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
         endif
 "   }
@@ -36,57 +36,59 @@
         " Tree explorer
         Bundle 'scrooloose/nerdtree'
         " Color
-        " Bundle 'altercation/vim-colors-solarized' 
-        " Bundle 'tpope/vim-surround'
-        " Bundle 'tpope/vim-repeat'
-        " Bundle 'spf13/vim-autoclose'
-        " Bundle 'ctrlpvim/ctrlp.vim'
-        " Bundle 'tacahiroy/ctrlp-funky'
-        " Bundle 'kristijanhusak/vim-multiple-cursors'
-        " create session for vim"
-        " Bundle 'vim-scripts/sessionman.vim' 
+        Bundle 'altercation/vim-colors-solarized'
+        Bundle 'tpope/vim-surround'
+        Bundle 'tpope/vim-repeat'
+        Bundle 'spf13/vim-autoclose'
+        Bundle 'ctrlpvim/ctrlp.vim'
+        " Jump to function definition
+        Bundle 'tacahiroy/ctrlp-funky'
+        Bundle 'kristijanhusak/vim-multiple-cursors'
+        " create session for vim
+        " :SessionOpn
+        Bundle 'vim-scripts/sessionman.vim'
         " Extend % match
-        " Bundle 'matchit.zip' 
-        " Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
-        " Bundle 'Lokaltog/vim-easymotion'
+        Bundle 'matchit.zip'
+        Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
+        Bundle 'Lokaltog/vim-easymotion'
         " nerdtree tabs
-        " Bundle 'jistr/vim-nerdtree-tabs' 
+        Bundle 'jistr/vim-nerdtree-tabs'
         " colorschemes
-        " Bundle 'flazz/vim-colorschemes' 
+        Bundle 'flazz/vim-colorschemes'
         " list all UNDO
-        " Bundle 'mbbill/undotree' 
-        " Bundle 'Yggdroot/indentLine'
+        Bundle 'mbbill/undotree'
+        Bundle 'Yggdroot/indentLine'
         " restore file cursor position
-        " Bundle 'vim-scripts/restore_view.vim' 
+        " Bundle 'vim-scripts/restore_view.vim'
         " display add/remove info
-        " Bundle 'mhinz/vim-signify' 
+        " Bundle 'mhinz/vim-signify'
         " easy search, substitute
-        " Bundle 'tpope/vim-abolish.git' 
+        " Bundle 'tpope/vim-abolish.git'
         " substitue preview
-        " Bundle 'osyo-manga/vim-over' 
+        " Bundle 'osyo-manga/vim-over'
         " create your own text objects
-        " Bundle 'kana/vim-textobj-user' 
+        " Bundle 'kana/vim-textobj-user'
         " indent textobj
-        " Bundle 'kana/vim-textobj-indent' 
+        " Bundle 'kana/vim-textobj-indent'
         " smart selection of text object
-        " Bundle 'gcmt/wildfire.vim' 
+        " Bundle 'gcmt/wildfire.vim'
 "   }
 " "
 " "   Development {
 "         Bundle 'scrooloose/syntastic'
 "         Bundle 'tpope/vim-fugitive'
 "         " Call webapi directly in vim
-"         Bundle 'mattn/webapi-vim' 
+"         Bundle 'mattn/webapi-vim'
 "         " github gist
-"         Bundle 'mattn/gist-vim' 
+"         Bundle 'mattn/gist-vim'
 "         " Extra commentor
-"         Bundle 'scrooloose/nerdcommenter' 
+"         Bundle 'scrooloose/nerdcommenter'
 "         " easy commentary
-"         Bundle 'tpope/vim-commentary' 
+"         Bundle 'tpope/vim-commentary'
 "         " Text filtering + tabulation
-"         Bundle 'godlygeek/tabular' 
+"         Bundle 'godlygeek/tabular'
 "         " Class outline
-"         Bundle 'majutsushi/tagbar' 
+"         Bundle 'majutsushi/tagbar'
 " "   }
 " "
 " "   AutoComplete {
