@@ -61,24 +61,24 @@
         " restore file cursor position
         Bundle 'vim-scripts/restore_view.vim'
         " display add/remove info
-        " Bundle 'mhinz/vim-signify'
+        Bundle 'mhinz/vim-signify'
         " easy search, substitute
-        " Bundle 'tpope/vim-abolish.git'
+        Bundle 'tpope/vim-abolish.git'
         " substitue preview
-        " Bundle 'osyo-manga/vim-over'
+        Bundle 'osyo-manga/vim-over'
         " create your own text objects
-        " Bundle 'kana/vim-textobj-user'
+        Bundle 'kana/vim-textobj-user'
         " indent textobj
-        " Bundle 'kana/vim-textobj-indent'
+        Bundle 'kana/vim-textobj-indent'
         " smart selection of text object
-        " Bundle 'gcmt/wildfire.vim'
+        Bundle 'gcmt/wildfire.vim'
 "   }
-" "
-" "   Development {
-"         Bundle 'scrooloose/syntastic'
-"         Bundle 'tpope/vim-fugitive'
-"         " Call webapi directly in vim
-"         Bundle 'mattn/webapi-vim'
+"
+"   Development {
+        Bundle 'scrooloose/syntastic'
+        Bundle 'tpope/vim-fugitive'
+        " Call webapi directly in vim
+        Bundle 'mattn/webapi-vim'
 "         " github gist
 "         Bundle 'mattn/gist-vim'
 "         " Extra commentor
