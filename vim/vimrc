@@ -398,7 +398,7 @@
     " }
 
     " Ag {
-        nnormap <leader>a :Ag<space>
+        nnoremap <leader>a :Ag<space>
     " }
 
     " AutoCloseTag {
