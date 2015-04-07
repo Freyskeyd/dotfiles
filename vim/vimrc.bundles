@@ -78,9 +78,9 @@
         Bundle 'scrooloose/syntastic'
         Bundle 'tpope/vim-fugitive'
         " Call webapi directly in vim
-        Bundle 'mattn/webapi-vim'
-"         " github gist
-"         Bundle 'mattn/gist-vim'
+        " Bundle 'mattn/webapi-vim'
+        " github gist
+        Bundle 'mattn/gist-vim'
 "         " Extra commentor
 "         Bundle 'scrooloose/nerdcommenter'
 "         " easy commentary
