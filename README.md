@@ -1,8 +1,11 @@
 # Dotfiles
 
 ## What provided in?
-## Configuration
-- Vim
-- Tmux
-- Zsh
-- GIT
+  - ctags
+  - doc
+  - git
+  - iTerm2
+  - node
+  - tmux
+  - vim
+  - zsh
