@@ -1,0 +1,104 @@
+[color]
+  ui = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = green
+
+[alias]
+  # branch
+  br = branch
+
+  # commit
+  ci = commit
+  oops = commit --amend --no-edit
+
+  # checkout
+  co = checkout
+
+  # cherry-pick
+  cp = cherry-pick -x
+
+  # diff
+  d = diff
+  dc = diff --cached
+  last = diff HEAD^
+
+  # log
+  lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
+
+  # rebase
+  rc = rebase --continue
+  rs = rebase --skip
+  ra = rebase --abort
+
+  # reset
+  unstage = reset HEAD
+  uncommit = reset --soft HEAD^
+  filelog = log -u
+  mt = mergetool
+
+  # stash
+  ss = stash
+  sl = stash list
+  sa = stash apply
+  sd = stash drop
+
+  # status
+  s = status
+  st = status
+
+  # cat-file
+  type = cat-file -t
+  dump = cat-file -p
+
+  # tag
+  t = tag -n
+
+[format]
+  pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+
+[mergetool]
+  prompt = false
+
+[merge]
+  summary = true
+  verbosity = 1
+  log = true
+
+[apply]
+  whitespace = fix
+
+[push]
+  default = simple
+
+[core]
+  editor = vim
+  excludesfile = ~/.dotfiles/git/gitignore
+
+[advice]
+  statusHints = false
+
+[diff]
+  mnemonicprefix = true
+  algorithm = patience
+  renames = copies
+
+[rerere]
+  enabled = true
+
+[include]
+  path = .gitconfig.user
+
+[help]
+  autocorrect = 1
+
+[status]
+  showUntrackedFiles = all
