@@ -1,0 +1,40 @@
+" Environment {
+	" Basics {
+		set nocompatible
+		set shell=/bin/sh
+	" }
+" }
+
+" Use bundles config {
+	if filereadable(expand("~/.vim/bundles.vim"))
+		source ~/.vim/bundles.vim
+	endif
+" }
+
+if filereadable(expand("~/.vim/config/general.vim"))
+    source ~/.vim/config/general.vim
+endif
+
+if filereadable(expand("~/.vim/config/vim-ui.vim"))
+    source ~/.vim/config/vim-ui.vim
+endif
+
+if filereadable(expand("~/.vim/config/formatting.vim"))
+    source ~/.vim/config/formatting.vim
+endif
+
+if filereadable(expand("~/.vim/config/key-mapping.vim"))
+    source ~/.vim/config/key-mapping.vim
+endif
+
+if filereadable(expand("~/.vim/config/plugins.vim"))
+    source ~/.vim/config/plugins.vim
+endif
+
+if filereadable(expand("~/.vim/config/gui.vim"))
+    source ~/.vim/config/gui.vim
+endif
+
+if filereadable(expand("~/.vim/config/functions.vim"))
+    source ~/.vim/config/functions.vim
+endif
