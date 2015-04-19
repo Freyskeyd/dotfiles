@@ -49,6 +49,8 @@
 			set undoreload=1000	" Maximum number of lines to save for undo on a buffer reload
 		endif
 	" }
-	
-
+    
+    if exists('$TMUX')
+        set ttymouse=xterm2
+    endif
 " }

@@ -2,6 +2,16 @@
     let mapleader = ','
     let maplocalleader = '_'
 
+    inoremap jj <ESC>
+
+    nnoremap x "_x
+    vnoremap x "_xgv
+    nnoremap X "_dd
+    vnoremap X "_X
+    nnoremap <BS> "_X"
+    nnoremap <Del> "_x"
+
+    noremap <leader>i :s/^/\
     map <C-J> <C-W>j<C-W>_
     map <C-K> <C-W>k<C-W>_
     map <C-L> <C-W>l<C-W>_
@@ -78,7 +88,7 @@
     nmap <silent> <leader>/ :set invhlsearch<CR>
 
     " Find merge conflict markers
-    map <leader>fc /\v^[<\|=>]{7}( .*|$)<CR>
+    map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 
     " Visual shifting (does not exit Visual mode)
     vnoremap < <gv
@@ -91,5 +101,24 @@
     " For when you forget to sudo.. Really write the file
     cmap w!! w !sudo tee % >/dev/null
 
+    " Some helpers to edit mode
+    " http://vimcasts.org/e/14
+    cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+    map <leader>ew :e %%
+    map <leader>es :sp %%
+    map <leader>ev :vsp %%
+    map <leader>et :tabe %%
 
+    " Adjust viewports to the same size
+    map <Leader>= <C-w>=
+
+    " Map <Leader>ff to display all lines with keyword under cursor
+    " and ask which one to jump to
+    nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr . "[\t"<CR>
+
+    " Easier horizontal scrolling
+    map zl zL
+    map zh zH
+
+    nnoremap <silent> <leader>q gwip
 " }
