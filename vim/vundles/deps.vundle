@@ -1,0 +1,6 @@
+Plugin 'MarcWeber/vim-addon-mw-utils'   " addon utils
+Plugin 'tomtom/tlib_vim'                " Utiliy functions for vim
+Plugin 'mileszs/ack.vim'                " Search tool
+Plugin 'scrooloose/nerdtree'            " Tree explorer
+Plugin 'tpope/vim-surround'             " Surrounding helpers
+Plugin 'tpope/vim-repeat'               " Repeat support

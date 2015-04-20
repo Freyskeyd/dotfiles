@@ -7,6 +7,7 @@ call vundle#begin()
 " let Vundle manage Vundle
 Plugin 'gmarik/vundle'
 
+runtime deps.vundle
 runtime git.vundle
 runtime languages.vundle
 runtime appearance.vundle
