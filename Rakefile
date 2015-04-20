@@ -21,6 +21,7 @@ task :install do
 
 end
 
+desc "Install vundle and update vim plugins"
 task :install_vundle do
   puts "=========================================="
   puts "Installing and update vundles."

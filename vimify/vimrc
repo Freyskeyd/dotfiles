@@ -1,14 +1,14 @@
 " Environment {
-	" Basics {
-		set nocompatible
-		set shell=/bin/sh
-	" }
+    " Basics {
+        set nocompatible
+        set shell=/bin/sh
+    " }
 " }
 
 " Use bundles config {
-	if filereadable(expand("~/.vim/bundles.vim"))
-		source ~/.vim/bundles.vim
-	endif
+    if filereadable(expand("~/.vim/bundles.vim"))
+        source ~/.vim/bundles.vim
+    endif
 " }
 
 if filereadable(expand("~/.vim/config/general.vim"))
