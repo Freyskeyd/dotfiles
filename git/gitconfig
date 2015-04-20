@@ -102,3 +102,6 @@
 
 [status]
   showUntrackedFiles = all
+[user]
+	name = Freyskeyd
+	email = contact@freyskeyd.fr
