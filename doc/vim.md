@@ -2,6 +2,7 @@
 
 ## Plugins
 ### Appareance
+#### Color
 #### Marks
 
 Set mark in current buffer
