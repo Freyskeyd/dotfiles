@@ -1,6 +1,22 @@
-Plugin 'MarcWeber/vim-addon-mw-utils'   " addon utils
-Plugin 'tomtom/tlib_vim'                " Utiliy functions for vim
-Plugin 'mileszs/ack.vim'                " Search tool
-Plugin 'scrooloose/nerdtree'            " Tree explorer
-Plugin 'tpope/vim-surround'             " Surrounding helpers
-Plugin 'tpope/vim-repeat'               " Repeat support
+Plugin 'MarcWeber/vim-addon-mw-utils'       " addon utils
+Plugin 'tomtom/tlib_vim'                    " Utiliy functions for vim
+Plugin 'mileszs/ack.vim'                    " Search tool
+Plugin 'scrooloose/nerdtree'                " Tree explorer
+Plugin 'tpope/vim-surround'                 " Surrounding helpers
+Plugin 'tpope/vim-repeat'                   " Repeat support
+Plugin 'tpope/vim-abolish.git'              " Easy search, substitute
+Plugin 'Townk/vim-autoclose'                 " Autoclose brackets
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'              " Jump to function definition
+Plugin 'kristijanhusak/vim-multiple-cursors'
+" Plugin 'vim-scripts/sessionman.vim'
+Plugin 'matchit.zip'
+Plugin 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'jistr/vim-nerdtree-tabs'            " Nerdtree tabs
+Plugin 'flazz/vim-colorschemes'             " Color schemes
+Plugin 'mbbill/undotree'                    " List all UNDO
+Plugin 'Yggdroot/indentLine'
+Plugin 'vim-scripts/restore_view.vim'
+Plugin 'mhinz/vim-signify'                  " Display add/remove
+Plugin 'osyo-manga/vim-over'                " Substitute preview
