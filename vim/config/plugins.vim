@@ -8,4 +8,7 @@
     endif
 " }
 
+" Tell showmarks to not include the various brace marks (),{}, etc
+let g:showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY"
+
 let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'

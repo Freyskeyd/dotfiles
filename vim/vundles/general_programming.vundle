@@ -1,0 +1,7 @@
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mattn/webapi-vim'           " Call webapi directly in vi
+Plugin 'mattn/gist-vim'             " Github gist
+Plugin 'scrooloose/nerdcommenter'   " Extra commentor
+Plugin 'tpope/vim-commentary'       " Easy commentary
+Plugin 'godlygeek/tabular'          " Text filtering + tabulation

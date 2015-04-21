@@ -20,3 +20,6 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'vim-scripts/restore_view.vim'
 Plugin 'mhinz/vim-signify'                  " Display add/remove
 Plugin 'osyo-manga/vim-over'                " Substitute preview
+Plugin 'kana/vim-textobj-user'              " Create your own text objects
+Plugin 'kana/vim-textobj-indent'            "indent object
+Plugin 'gcmt/wildfire.vim'                  " Smart selecton of text object

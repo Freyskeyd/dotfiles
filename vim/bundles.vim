@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 runtime deps.vundle
+runtime general_programming.vundle
 runtime git.vundle
 runtime languages.vundle
 runtime appearance.vundle
