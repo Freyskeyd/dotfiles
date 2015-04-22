@@ -1,0 +1,23 @@
+NeoBundle 'scrooloose/nerdtree' " Tree explorer
+NeoBundle 'altercation/vim-colors-solarized' " Color
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'spf13/vim-autoclose'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'tacahiroy/ctrlp-funky'
+NeoBundle 'kristijanhusak/vim-multiple-cursors'
+NeoBundle 'vim-scripts/sessionman.vim' " create session for vim
+NeoBundle 'matchit.zip' " Extend % match
+NeoBundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'jistr/vim-nerdtree-tabs' " nerdtree tabs
+NeoBundle 'flazz/vim-colorschemes' " colorschemes
+NeoBundle 'mbbill/undotree' " list all UNDO
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'vim-scripts/restore_view.vim' " restore file cursor position
+NeoBundle 'mhinz/vim-signify' " display add/remove info
+NeoBundle 'tpope/vim-abolish.git' " easy search, substitute
+NeoBundle 'osyo-manga/vim-over' " substitue preview
+NeoBundle 'kana/vim-textobj-user' " create your own text objects
+NeoBundle 'kana/vim-textobj-indent' " indent textobj
+NeoBundle 'gcmt/wildfire.vim' " smart selection of text object

@@ -1,0 +1,4 @@
+NeoBundle 'Shougo/neocomplete.vim.git'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'honza/vim-snippets'

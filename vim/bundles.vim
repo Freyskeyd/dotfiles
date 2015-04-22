@@ -2,25 +2,33 @@ filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 set rtp+=~/.vim/vundles/
-call vundle#begin()
+set rtp+=~/.vim/bundle/neobundle.vim/
 
-" let Vundle manage Vundle
-Plugin 'gmarik/vundle'
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 runtime deps.vundle
+runtime html.vundle
+runtime python.vundle
+runtime general.vundle
+runtime javascript.vundle
+runtime ruby.vundle
 runtime general_programming.vundle
+runtime misc.vundle
+runtime scala.vundle
 runtime git.vundle
-runtime languages.vundle
-runtime appearance.vundle
-runtime textobjects.vundle
+runtime php.vundle
 runtime search.vundle
 runtime project.vundle
-runtime vim-improvements.vundle
+runtime snip_autocomplete.vundle
 
 if filereadable(expand("~/.dotfiles/vim/.bundles.local"))
 	source ~/.dotfiles/vim/.bundles.local
 endif
 
-call vundle#end()
+call neobundle#end()
 
 filetype plugin indent on
+
+NeoBundleCheck

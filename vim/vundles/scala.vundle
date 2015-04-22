@@ -1,0 +1,3 @@
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'derekwyatt/vim-sbt'
+NeoBundle 'xptemplate'

@@ -1,5 +1,8 @@
-Plugin 'scrooloose/syntastic'
-Plugin 'mattn/webapi-vim'           " Call webapi directly in vi
-Plugin 'scrooloose/nerdcommenter'   " Extra commentor
-Plugin 'tpope/vim-commentary'       " Easy commentary
-Plugin 'godlygeek/tabular'          " Text filtering + tabulation
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'mattn/webapi-vim' " Call webapi directly in vim
+NeoBundle 'mattn/gist-vim' " github gist
+NeoBundle 'scrooloose/nerdcommenter' " Extra commentor
+NeoBundle 'tpope/vim-commentary' " easy commentary
+NeoBundle 'godlygeek/tabular' " Text filtering + tabulation
+NeoBundle 'majutsushi/tagbar' " Class outline

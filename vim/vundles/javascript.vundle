@@ -1,0 +1,5 @@
+NeoBundle 'elzr/vim-json'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'briancollins/vim-jst'
+NeoBundle 'kchmck/vim-coffee-script'

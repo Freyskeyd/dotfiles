@@ -1,0 +1,4 @@
+NeoBundle 'klen/python-mode'
+NeoBundle 'yssource/python.vim'
+NeoBundle 'python_match.vim'
+NeoBundle 'pythoncomplete'

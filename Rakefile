@@ -1,6 +1,6 @@
 require 'rake'
 require 'fileutils'
-require File.join(File.dirname(__FILE__), 'bin', 'dotfiles', 'vundle')
+require File.join(File.dirname(__FILE__), 'bin', 'dotfiles', 'neobundle')
 
 desc "Hook our dotfiles into system-standard positions."
 task :install do
@@ -16,27 +16,27 @@ task :install do
   file_operation(Dir.glob('vimify/*')) if want_to_install?('Vimrc')
   file_operation(Dir.glob('vim')) if want_to_install?('Vim configuration')
 
-  Rake::Task["install_vundle"].execute
+  Rake::Task["install_neobundle"].execute
 
 
 end
 
-desc "Install vundle and update vim plugins"
-task :install_vundle do
+desc "Install neobundle and update vim plugins"
+task :install_neobundle do
   puts "=========================================="
-  puts "Installing and update vundles."
+  puts "Installing and update neobundles."
   puts "=========================================="
 
   puts ""
 
-  vundle_path = File.join('vim','bundle','vundle')
-  unless File.exists?(vundle_path)
+  neobundle_path = File.join('vim','bundle','neobundle.vim')
+  unless File.exists?(neobundle_path)
     run %{
 cd $HOME/.dotfiles
-git clone https://github.com/gmarik/vundle.git #{vundle_path}
+git clone https://github.com/Shougo/neobundle.vim.git #{neobundle_path}
 }
   end
-  Vundle::update_vundle
+  Neobundle::update_neobundle
 end
 
 task :uninstall do
@@ -51,7 +51,7 @@ task :uninstall do
 end
 
 def install_vim
-  run %{brew install macvim}
+  run %{brew install macvim -v --override-system-vim --with-lua --with-luajit --with-python3}
 end
 
 def install_homebrew
