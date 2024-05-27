@@ -3,6 +3,10 @@ local wezterm = require 'wezterm'
 return {
 	color_scheme = 'OneNord',
 	enable_tab_bar = false,
+
+	font_size = 21,
+	font = wezterm.font('Fira Code'),
+
 	macos_window_background_blur = 30,
 	window_decorations = 'RESIZE',
 	keys = {

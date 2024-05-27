@@ -8,3 +8,6 @@ fi
 
 # LS
 alias ls="eza -lah"
+
+# vim
+alias vim="nvim"
