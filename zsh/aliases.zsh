@@ -13,3 +13,4 @@ alias c="docker compose"
 alias s='cd ..'
 
 alias cleanup="find . -type f -name '*.DS_STORE' -ls -delete"
+alias cat=bat
