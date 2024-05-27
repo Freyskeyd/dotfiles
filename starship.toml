@@ -8,14 +8,14 @@ $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
-$git_custom\
+$custom\
 $sudo\
 $time\
 $status\
 $character"""
 
 [git_branch]
-format = '[$symbol$branch(:$remote_branch)]($style)'
+format = '[$symbol$branch(:$remote_branch)]($style) '
 style = "green"
 
 [git_status]
