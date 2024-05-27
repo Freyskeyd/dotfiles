@@ -1,0 +1,40 @@
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+
+set -x
+
+# ===== Variables ==================================
+
+declare -A gaps
+declare -A color
+
+gaps["top"]="10"
+gaps["bottom"]="10"
+gaps["left"]="10"
+gaps["right"]="10"
+gaps["inner"]="10"
+
+color["preselect"]="0xE02d74da"
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+
+# ===== Tiling settings =============================
+yabai -m config layout bsp
+
+# general space settings
+yabai -m config top_padding    "${gaps["top"]}"
+yabai -m config bottom_padding "${gaps["bottom"]}"
+yabai -m config left_padding   "${gaps["left"]}"
+yabai -m config right_padding  "${gaps["right"]}"
+yabai -m config window_gap     "${gaps["inner"]}"
+
+# Colors of the insertable window
+yabai -m config insert_feedback_color "${color["preselect"]}"
+
+# global settings
+yabai -m config window_origin_display default
+yabai -m config window_placement second_child
+yabai -m config window_shadow on
+
