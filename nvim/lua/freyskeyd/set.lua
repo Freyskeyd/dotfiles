@@ -20,13 +20,14 @@ opt.incsearch = true
 opt.list = true
 opt.listchars:append "eol:⤶"
 
+opt.termguicolors = true
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
+
+opt.updatetime = 50
+opt.colorcolumn = "80"
+
 opt.clipboard = 'unnamedplus'
 
-opt.cmdheight = 0
+-- opt.cmdheight = 0
 
-local hooks = require("ibl.hooks")
-
-hooks.register(
-	hooks.type.WHITESPACE,
-	hooks.builtin.hide_first_space_indent_level
-)

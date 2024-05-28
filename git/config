@@ -1,13 +1,33 @@
 [alias]
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
-	lg = log --graph --pretty=tformat:'%Cred%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
-	gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  lg = log --graph --pretty=tformat:'%Cred%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
+  gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
 
 [apply]
-	whitespace = fix
+  whitespace = fix
 
 [color]
-	ui = true
+  ui = true
+
+[diff]
+  renames = copies
+  colorMoved = default
+
+[help]
+  autocorrect = 1
+
+[push]
+  default = simple
+
+[rerere]
+  enabled = true
+
+[status]
+  showUntrackedFiles = all
+
+[commit]
+  gpgsign = true
+  verbose = true
