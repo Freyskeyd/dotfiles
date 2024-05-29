@@ -28,26 +28,8 @@ return {
                 vim.keymap.set("n", "<leader>ra", function() vim.lsp.buf.rename() end, opts)
                 vim.keymap.set("n", "gdt", "<cmd>vsp | lua vim.lsp.buf.definition()<CR>", opts)
             end)
-            local filetypes = {
-                "bib",
-                "gitcommit",
-                "markdown",
-                "org",
-                "plaintex",
-                "rst",
-                "rnoweb",
-                "tex",
-                "pandoc",
-                "rust",
-                "javascript",
-                "typescript",
-                "javascriptreact",
-                "typescriptreact",
-                "lua",
-                "python",
-                "html",
-            }
-            require('mason').setup({})
+            local filetypes =
+                require('mason').setup({})
             require('mason-lspconfig').setup({
                 -- Replace the language servers listed here
                 -- with the ones you want to install
@@ -70,14 +52,24 @@ return {
                     require("ltex_extra").setup {
                         init_check = true,
                         path = vim.fn.expand("$XDG_CONFIG_HOME/ltex/")
-
                     }
                 end,
                 cmd = { "/opt/homebrew/bin/ltex-ls" },
-                filetypes = filetypes,
+                filetypes = {
+                    "gitcommit",
+                    "markdown",
+                    "rust",
+                    "lua",
+                },
+                autostart = false,
                 settings = {
                     ltex = {
-                        enabled = filetypes,
+                        enabled = {
+                            "gitcommit",
+                            "markdown",
+                            "rust",
+                            "lua",
+                        },
                         checkFrequency = 'save',
                         additionalRules = { enablePickyRules = true },
                         ['ltex-ls'] = {
@@ -164,15 +156,15 @@ return {
                 end,
                 { silent = true, buffer = bufnr }
             )
-
-            vim.keymap.set(
-                "n",
-                "<leader>a",
-                function()
-                    vim.cmd.RustLsp('codeAction')
-                end,
-                { silent = true, buffer = bufnr }
-            )
+            --
+            -- vim.keymap.set(
+            --     "n",
+            --     "<leader>a",
+            --     function()
+            --         vim.cmd.RustLsp('codeAction')
+            --     end,
+            --     { silent = true, buffer = bufnr }
+            -- )
         end,
         keys = {
             { "<leader>rc", "<cmd>RustLsp openCargo<cr>",   desc = "Open Cargo" },
@@ -182,6 +174,7 @@ return {
             { "<leader>rr", "<cmd>RustLsp runnables<cr>",   desc = "Rust runables" },
             { "<leader>rt", "<cmd>RustLsp testables<cr>",   desc = "Rust tests" },
             { "<leader>rd", "<cmd>RustLsp debuggables<cr>", desc = "Rust debuggables" },
+            { "<leader>a",  "<cmd>RustLsp codeAction<cr>",  desc = "Rust code actions" },
         },
     }
 }

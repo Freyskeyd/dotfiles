@@ -11,7 +11,12 @@ return {
 
             vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { silent = true })
             vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { silent = true })
-            vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', { silent = true })
+
+            vim.keymap.set('n', '<leader>x', function()
+                local buffer_id = vim.fn.bufnr()
+                vim.cmd 'BufferLineCyclePrev'
+                vim.cmd('bdelete ' .. buffer_id)
+            end, { desc = 'Close current buffer and go to previous' })
         end
     },
 }
