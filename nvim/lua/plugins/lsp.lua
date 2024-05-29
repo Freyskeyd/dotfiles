@@ -7,7 +7,7 @@ return {
             'neovim/nvim-lspconfig',
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
-
+            { "barreiroleo/ltex-extra.nvim" },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/nvim-cmp' },
             { 'L3MON4D3/LuaSnip' },
@@ -28,7 +28,25 @@ return {
                 vim.keymap.set("n", "<leader>ra", function() vim.lsp.buf.rename() end, opts)
                 vim.keymap.set("n", "gdt", "<cmd>vsp | lua vim.lsp.buf.definition()<CR>", opts)
             end)
-
+            local filetypes = {
+                "bib",
+                "gitcommit",
+                "markdown",
+                "org",
+                "plaintex",
+                "rst",
+                "rnoweb",
+                "tex",
+                "pandoc",
+                "rust",
+                "javascript",
+                "typescript",
+                "javascriptreact",
+                "typescriptreact",
+                "lua",
+                "python",
+                "html",
+            }
             require('mason').setup({})
             require('mason-lspconfig').setup({
                 -- Replace the language servers listed here
@@ -38,11 +56,36 @@ return {
                     function(server_name)
                         require('lspconfig')[server_name].setup({})
                     end,
+
                     -- this is the "custom handler" for `rust_analyzer`
                     -- noop is an empty function that doesn't do anything
                     rust_analyzer = lsp_zero.noop,
                 },
             })
+
+            require("lspconfig").ltex.setup {
+                capabilities = lsp_zero.get_capabilities(),
+                on_attach = function(client, bufnr)
+                    -- rest of your on_attach process.
+                    require("ltex_extra").setup {
+                        init_check = true,
+                        path = vim.fn.expand("$XDG_CONFIG_HOME/ltex/")
+
+                    }
+                end,
+                cmd = { "/opt/homebrew/bin/ltex-ls" },
+                filetypes = filetypes,
+                settings = {
+                    ltex = {
+                        enabled = filetypes,
+                        checkFrequency = 'save',
+                        additionalRules = { enablePickyRules = true },
+                        ['ltex-ls'] = {
+                            path = "/opt/homebrew/bin/ltex-ls",
+                        },
+                    },
+                },
+            }
 
             lsp_zero.format_on_save({
                 format_opts = {
