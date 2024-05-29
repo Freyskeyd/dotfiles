@@ -23,6 +23,10 @@ return {
             lsp_zero.on_attach(function(client, bufnr)
                 lsp_zero.default_keymaps({ buffer = bufnr })
                 lsp_zero.buffer_autoformat()
+
+                local opts = { buffer = bufnr }
+                vim.keymap.set("n", "<leader>ra", function() vim.lsp.buf.rename() end, opts)
+                vim.keymap.set("n", "gdt", "<cmd>vsp | lua vim.lsp.buf.definition()<CR>", opts)
             end)
 
             require('mason').setup({})
@@ -79,7 +83,6 @@ return {
         },
         ft = { "rust" },
         config = function()
-
             local lsp_zero = require('lsp-zero')
 
             vim.g.rustaceanvim = {
