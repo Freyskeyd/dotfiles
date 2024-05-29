@@ -22,18 +22,24 @@ return {
             local lsp_zero = require("lsp-zero")
             lsp_zero.on_attach(function(client, bufnr)
                 lsp_zero.default_keymaps({ buffer = bufnr })
+                lsp_zero.buffer_autoformat()
             end)
+
             require('mason').setup({})
             require('mason-lspconfig').setup({
                 -- Replace the language servers listed here
                 -- with the ones you want to install
-                ensure_installed = { 'lua_ls' },
+                ensure_installed = { 'lua_ls', 'rust_analyzer' },
                 handlers = {
                     function(server_name)
                         require('lspconfig')[server_name].setup({})
                     end,
-                }
+                    -- this is the "custom handler" for `rust_analyzer`
+                    -- noop is an empty function that doesn't do anything
+                    rust_analyzer = lsp_zero.noop,
+                },
             })
+
             lsp_zero.format_on_save({
                 format_opts = {
                     async = false,
@@ -73,6 +79,9 @@ return {
         },
         ft = { "rust" },
         config = function()
+
+            local lsp_zero = require('lsp-zero')
+
             vim.g.rustaceanvim = {
                 tools = {
                     float_win_config = {
@@ -84,6 +93,7 @@ return {
                     reload_workspace_from_cargo_toml = true,
                 },
                 server = {
+                    capabilities = lsp_zero.get_capabilities(),
                     on_attach = function(client, bufnr)
                         return require("lsp-inlayhints").on_attach(client, bufnr)
                     end,
