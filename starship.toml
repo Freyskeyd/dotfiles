@@ -20,7 +20,7 @@ style = "green"
 
 [git_status]
 style = "bold yellow"
-staged = '[++ \($count\)](green)'
+staged = '[++\($count\)](green)'
 stashed = " pending_stash "
 untracked = " untracked_files "
 deleted = " deleted_files "
