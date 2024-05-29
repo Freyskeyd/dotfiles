@@ -31,3 +31,23 @@ opt.clipboard = 'unnamedplus'
 
 -- opt.cmdheight = 0
 
+local cmp = require("cmp")
+
+cmp.setup({
+    sources = {
+        { name = "nvim_lsp" },
+        { name = "copilot" },
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-p>'] = cmp.mapping.select_prev_item({
+            behavior = cmp.SelectBehavior.Select,
+        }),
+        ['<C-n>'] = cmp.mapping.select_next_item({
+            behavior = cmp.SelectBehavior.Select,
+        }),
+        ['<CR>'] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        }),
+    })
+})
