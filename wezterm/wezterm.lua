@@ -7,6 +7,8 @@ return {
 	font_size = 21,
 	font = wezterm.font('Fira Code'),
 
+	send_composed_key_when_left_alt_is_pressed = true,
+
 	macos_window_background_blur = 30,
 	window_decorations = 'RESIZE',
 	keys = {
