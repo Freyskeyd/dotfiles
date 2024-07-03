@@ -55,7 +55,7 @@ $ stow --target ~/.config .
 
 If you want to have access to the same capabilities regarding yabai, you need to follow the [steps](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
 
-## Folder structure
+## Folder Structure
 
 
 - **brew**: Contains a `Brewfile` to install dependencies
