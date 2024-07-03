@@ -8,9 +8,6 @@ Screenshots
 3. [Dependencies](#dependencies)
 4. [Installation](#installation)
 5. [Folder Structure](#folder-structure)
-6. [Application Theming](#appTheming)
-7. [Keybinds](#keybinds)
-8. [Notes](#notes)
 
 <a name="details"></a>
 ## Details ##
@@ -70,5 +67,4 @@ If you want to have access to the same capabilities regarding yabai, you need to
 - `wezterm`: Configuration for the [wezterm](https://wezfurlong.org/wezterm/) terminal emulator
 - `yabai`: Configuration for [yabai](https://github.com/koekeishiya/yabai) (extra installation steps are needed for yabai, see below)
 - `zsh`: Zsh configurations
-
 
