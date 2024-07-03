@@ -7,7 +7,7 @@ Screenshots
 2. [Features](#features)
 3. [Dependencies](#dependencies)
 4. [Installation](#installation)
-5. [Folder Structure](#folderStructure)
+5. [Folder Structure](#folder-structure)
 6. [Application Theming](#appTheming)
 7. [Keybinds](#keybinds)
 8. [Notes](#notes)
@@ -42,7 +42,7 @@ After installing `homebrew`, clone this repository (the path to the repo will be
 The repository contains various folder, you can use all of them or pick only the one you want.
 However, the `brew` install will install all packages needed. If you want to remote some dependencies, you need to edit the file in `DOTFILES_PATH/brew`.
 
-```
+```bash
 # Move to clone dotfiles directory
 $ cd DOTFILES_PATH
 
