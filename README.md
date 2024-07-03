@@ -47,7 +47,7 @@ However, the `brew` install will install all packages needed. If you want to rem
 $ cd DOTFILES_PATH
 
 # Install brew deps
-$ xargs brew install < ./brew/leaves.txt
+$ brew bundle --file=brew/Brewfile
 
 # Sync directories to ~/.config
 $ stow --target ~/.config .
