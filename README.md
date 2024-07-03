@@ -52,3 +52,23 @@ $ brew bundle --file=brew/Brewfile
 # Sync directories to ~/.config
 $ stow --target ~/.config .
 ```
+
+If you want to have access to the same capabilities regarding yabai, you need to follow the [steps](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
+
+## Folder structure
+
+
+- **brew**: Contains a `Brewfile` to install dependencies
+- **gh**: Configuration for the [GH](https://cli.github.com/) cli
+- **gh-dash**: Configuration for [GH-dash](https://github.com/dlvhdr/gh-dash) dashboard
+- **git**: Configuration for `git`
+- **nvim**: Configuration for `neovim`
+- **rustfmt**: Configuration of the `rustfmt` tool
+- **skhd**: Configuration and keybindings for [skhd](https://github.com/koekeishiya/skhd) daemon
+- **starship.toml**: Configuration for the [starship](https://starship.rs/) prompt
+- **tmux**: Configuration for tmux
+- **wezterm**: Configuration for the [wezterm](https://wezfurlong.org/wezterm/) terminal emulator
+- **yabai**: Configuration for [yabai](https://github.com/koekeishiya/yabai) (extra installation steps are needed for yabai, see below)
+- **zsh**: Zsh configurations
+
+
