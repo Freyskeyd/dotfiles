@@ -1,6 +1,10 @@
 # Dotfiles
 
-Screenshots
+<center>
+
+![screenshot](./screenshot.png)
+
+</center>
 
 ## Contents ##
 1. [Details](#details)
