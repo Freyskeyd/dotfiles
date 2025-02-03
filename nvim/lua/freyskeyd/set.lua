@@ -2,6 +2,9 @@ local opt = vim.opt
 
 opt.clipboard = 'unnamedplus'
 
+-- views can only be fully collapsed with the global statusline
+opt.laststatus = 3
+
 opt.nu = true
 opt.relativenumber = true
 

@@ -7,7 +7,15 @@ return {
             'rmehri01/onenord.nvim'
         },
         config = function()
-            require("bufferline").setup {}
+            local colors = require("onenord.colors").load()
+            require("bufferline").setup {
+                highlights = {
+                    fill = {
+                        fg = colors.blue,
+                        bg = colors.bg,
+                    },
+                }
+            }
 
             vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { silent = true })
             vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { silent = true })

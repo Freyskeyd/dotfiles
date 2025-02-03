@@ -20,11 +20,12 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 zinit light joshskidmore/zsh-fzf-history-search
 
-
+source ~/.secret.zsh
 source ~/.config/zsh/exports.zsh
 source ~/.config/zsh/history.zsh
 source ~/.config/zsh/aliases.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
+gpgconf --launch gpg-agent
+source <(av completion zsh)

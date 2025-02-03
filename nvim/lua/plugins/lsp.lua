@@ -1,5 +1,10 @@
 return {
     -- LSP
+
+    {
+        'dhruvasagar/vim-table-mode',
+    },
+
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -109,6 +114,7 @@ return {
         "mrcjkb/rustaceanvim",
         version = "^4",
         dependencies = {
+            'mfussenegger/nvim-dap',
             "nvim-lua/plenary.nvim",
             {
                 "lvimuser/lsp-inlayhints.nvim",
@@ -119,8 +125,16 @@ return {
         ft = { "rust" },
         config = function()
             local lsp_zero = require('lsp-zero')
+            local extension_path = vim.env.HOME .. "/.local/share/nvim/mason/packages/codelldb"
+            local codelldb_path = extension_path .. "adapter/codelldb"
+            local liblldb_path = extension_path .. "lldb/lib/liblldb"
 
+            local cfg = require("rustaceanvim.config")
             vim.g.rustaceanvim = {
+                -- DAP configuration
+                dap = {
+                    adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
+                },
                 tools = {
                     float_win_config = {
                         border = 'rounded'
@@ -156,6 +170,15 @@ return {
                 end,
                 { silent = true, buffer = bufnr }
             )
+            for _, method in ipairs({ 'textDocument/diagnostic', 'workspace/diagnostic' }) do
+                local default_diagnostic_handler = vim.lsp.handlers[method]
+                vim.lsp.handlers[method] = function(err, result, context, config)
+                    if err ~= nil and err.code == -32802 then
+                        return
+                    end
+                    return default_diagnostic_handler(err, result, context, config)
+                end
+            end
             --
             -- vim.keymap.set(
             --     "n",

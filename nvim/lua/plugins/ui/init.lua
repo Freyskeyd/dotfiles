@@ -15,8 +15,8 @@ return {
         },
         config = lualine.config
     },
-
-    'tpope/vim-sleuth',
+    -- note: fails for indent in md files
+    -- 'tpope/vim-sleuth',
 
     {
         'lukas-reineke/indent-blankline.nvim',

@@ -13,7 +13,6 @@ return {
                 local function opts(desc)
                     return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
                 end
-
                 -- default mappings
                 api.config.mappings.default_on_attach(bufnr)
 
@@ -25,10 +24,21 @@ return {
 
             -- pass to setup along with your other options
             require("nvim-tree").setup {
+                actions = {
+                    open_file = {
+                        window_picker = {
+                            enable = false,
+                        },
+                    },
+                },
                 view = {
                     float = {
-                        enable = true
-                    }
+                        enable = true,
+                        open_win_config = {
+                            width = 60,
+
+                        },
+                    },
                 },
                 git = {
                     enable = true,
@@ -45,7 +55,10 @@ return {
             }
 
             local api = require "nvim-tree.api"
-            vim.keymap.set('n', '<C-t>', function() api.tree.toggle({ find_file = true, focus = true }) end,
+
+            vim.keymap.set('n', '<C-t>', function()
+                    api.tree.toggle({ find_file = true, focus = true })
+                end,
                 { remap = true, silent = true })
         end,
     },
