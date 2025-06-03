@@ -24,6 +24,7 @@ source ~/.secret.zsh
 source ~/.config/zsh/exports.zsh
 source ~/.config/zsh/history.zsh
 source ~/.config/zsh/aliases.zsh
+source ~/.config/zsh/zed.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

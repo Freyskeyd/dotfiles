@@ -111,15 +111,16 @@ return {
         end,
     },
     {
+        "chrisgrieser/nvim-lsp-endhints",
+        event = "LspAttach",
+        opts = {}, -- required, even if empty
+    },
+    {
         "mrcjkb/rustaceanvim",
         version = "^4",
         dependencies = {
             'mfussenegger/nvim-dap',
             "nvim-lua/plenary.nvim",
-            {
-                "lvimuser/lsp-inlayhints.nvim",
-                opts = {}
-            },
             'VonHeikemen/lsp-zero.nvim',
         },
         ft = { "rust" },
@@ -146,9 +147,6 @@ return {
                 },
                 server = {
                     capabilities = lsp_zero.get_capabilities(),
-                    on_attach = function(client, bufnr)
-                        return require("lsp-inlayhints").on_attach(client, bufnr)
-                    end,
                     default_settings = {
                         -- rust-analyzer language server configuration
                         ["rust-analyzer"] = {

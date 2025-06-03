@@ -9,6 +9,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 export PATH="$PATH:$(go env GOPATH)/bin"
 
-export BAT_THEME="base16-256"
+# export BAT_THEME="base16-256"
 
 export BATS_LIB_PATH=$HOMEBREW_PREFIX/lib/
+export CLOUDSDK_PYTHON_SITEPACKAGES=1
